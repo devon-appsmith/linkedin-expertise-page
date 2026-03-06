@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan Wallenberg — Expertise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text-primary:    #09090B;
+      --text-secondary:  #52525B;
+      --text-tertiary:   #A1A1AA;
+      --bg:              #FFFFFF;
+      --surface:         #FAFAFA;
+      --surface-2:       #F4F4F5;
+      --border:          #E4E4E7;
+      --border-strong:   #D1D1D6;
+      --dark-bg:         #0C0E18;
+      --dark-surface:    #141620;
+      --dark-border:     #1E2130;
+      --dark-text:       #F8F8FC;
+      --dark-text-2:     #9394B0;
+      --orange:          #F97316;
+      --orange-light:    #FFF7ED;
+      --orange-border:   #FED7AA;
+      --purple:          #7C3AED;
+      --purple-light:    #F5F3FF;
+      --purple-border:   #DDD6FE;
+      --blue:            #2563EB;
+      --blue-light:      #EFF6FF;
+      --blue-border:     #BFDBFE;
+      --green:           #059669;
+      --linkedin-blue:   #0A66C2;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-primary);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      background: rgba(12, 14, 24, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #F97316, #EF4444);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+      letter-spacing: -0.02em;
+    }
+    .nav-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark-text);
+      letter-spacing: -0.01em;
+    }
+    .nav-name span { color: var(--orange); }
+
+    .nav-links {
+      display: flex;
+      gap: 2px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--dark-text-2);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.1s, color 0.1s;
+    }
+    .nav-links a:hover { color: var(--dark-text); background: var(--dark-surface); }
+    .nav-links a.active { color: var(--dark-text); }
+
+    /* ─────────────────────────────────────────
+       PAGES
+    ───────────────────────────────────────── */
+    .page { display: none; }
+    .page.active { display: block; animation: pageIn 0.25s ease both; }
+
+    @keyframes pageIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─────────────────────────────────────────
+       HUB HERO — dark
+    ───────────────────────────────────────── */
+    .hub-hero {
+      background: var(--dark-bg);
+      position: relative;
+      overflow: hidden;
+      padding: 80px 28px 72px;
+    }
+
+    /* decorative grid */
+    .hub-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(249,115,22,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249,115,22,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent);
+    }
+
+    /* glow blobs */
+    .hub-hero::after {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(249,115,22,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-glow-left {
+      position: absolute;
+      bottom: -100px;
+      left: -60px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hub-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 24px;
+      border: 1px solid rgba(249,115,22,0.3);
+      background: rgba(249,115,22,0.08);
+      padding: 5px 12px;
+      border-radius: 99px;
+    }
+    .hero-eyebrow-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--orange);
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hub-title {
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: var(--dark-text);
+      margin-bottom: 24px;
+    }
+    .hub-title .highlight {
+      background: linear-gradient(135deg, #F97316 0%, #EF4444 50%, #EC4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hub-description {
+      font-size: 17px;
+      color: var(--dark-text-2);
+      line-height: 1.75;
+      max-width: 600px;
+      margin-bottom: 36px;
+    }
+    .hub-description strong { color: var(--dark-text); font-weight: 600; }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {}
+    .hero-stat-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--dark-text);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-num span { color: var(--orange); }
+    .hero-stat-label {
+      font-size: 12px;
+      color: var(--dark-text-2);
+      font-weight: 500;
+    }
+    .hero-stat-sep {
+      width: 1px;
+      height: 40px;
+      background: var(--dark-border);
+      align-self: center;
+    }
+
+    /* ─────────────────────────────────────────
+       TOPIC CARDS
+    ───────────────────────────────────────── */
+    .topics-section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 56px 28px 96px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .section-subtitle {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) { .topics-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) {
+      .topics-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 16px; }
+      .hub-hero, .topics-section { padding-left: 16px; padding-right: 16px; }
+      .hero-stat-sep { display: none; }
+    }
+
+    .topic-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg);
+      cursor: pointer;
+      transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+      position: relative;
+    }
+    .topic-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .topic-card.orange:hover { border-color: var(--orange-border); box-shadow: 0 8px 32px rgba(249,115,22,0.12), 0 2px 8px rgba(249,115,22,0.08); }
+    .topic-card.purple:hover { border-color: var(--purple-border); box-shadow: 0 8px 32px rgba(124,58,237,0.12), 0 2px 8px rgba(124,58,237,0.08); }
+    .topic-card.blue:hover   { border-color: var(--blue-border);   box-shadow: 0 8px 32px rgba(37,99,235,0.12), 0 2px 8px rgba(37,99,235,0.08); }
+
+    .card-top {
+      height: 6px;
+      width: 100%;
+    }
+    .orange .card-top { background: linear-gradient(90deg, #F97316, #EF4444); }
+    .purple .card-top { background: linear-gradient(90deg, #7C3AED, #A855F7); }
+    .blue   .card-top { background: linear-gradient(90deg, #2563EB, #06B6D4); }
+
+    .card-body { padding: 24px 24px 20px; }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .orange .card-icon { background: var(--orange-light); }
+    .purple .card-icon { background: var(--purple-light); }
+    .blue   .card-icon { background: var(--blue-light); }
+
+    .topic-name {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .topic-arrow {
+      font-size: 16px;
+      color: var(--text-tertiary);
+      transition: transform 0.15s, color 0.15s;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .orange .topic-card:hover .topic-arrow, .topic-card.orange:hover .topic-arrow { color: var(--orange); transform: translate(2px,-2px); }
+    .purple .topic-card:hover .topic-arrow, .topic-card.purple:hover .topic-arrow { color: var(--purple); transform: translate(2px,-2px); }
+    .blue   .topic-card:hover .topic-arrow, .topic-card.blue:hover .topic-arrow   { color: var(--blue);   transform: translate(2px,-2px); }
+
+    .topic-summary {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .post-count {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+    }
+    .orange .post-count { background: var(--orange-light); color: var(--orange); }
+    .purple .post-count { background: var(--purple-light); color: var(--purple); }
+    .blue   .post-count { background: var(--blue-light);   color: var(--blue); }
+
+    .post-since { font-size: 12px; color: var(--text-tertiary); font-weight: 500; }
+
+    /* ─────────────────────────────────────────
+       DETAIL PAGE
+    ───────────────────────────────────────── */
+    .detail-topbar {
+      background: var(--dark-bg);
+      border-bottom: 1px solid var(--dark-border);
+      padding: 0 28px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .breadcrumb-link {
+      color: var(--dark-text-2);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.1s;
+    }
+    .breadcrumb-link:hover { color: var(--orange); }
+    .breadcrumb-sep { color: var(--dark-border); font-size: 16px; }
+    .breadcrumb-current { color: var(--dark-text); font-weight: 600; }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dark-text-2);
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-family: inherit;
+      transition: color 0.1s, background 0.1s;
+      margin-right: 4px;
+    }
+    .back-btn:hover { color: var(--dark-text); background: var(--dark-surface); }
+
+    /* detail hero band */
+    .detail-hero-band {
+      background: var(--dark-bg);
+      padding: 48px 28px 44px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .detail-hero-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(249,115,22,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249,115,22,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 70% 80% at 20% 50%, black, transparent);
+    }
+    .detail-hero-band::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -100px;
+      transform: translateY(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .detail-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .detail-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .detail-title {
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      color: var(--dark-text);
+      margin-bottom: 20px;
+    }
+
+    .detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--dark-text-2);
+    }
+    .detail-meta-item { display: flex; align-items: center; gap: 5px; }
+    .meta-sep { width: 1px; height: 14px; background: var(--dark-border); }
+
+    /* ─────────────────────────────────────────
+       DETAIL LAYOUT
+    ───────────────────────────────────────── */
+    .detail-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 28px 96px;
+      display: grid;
+      grid-template-columns: 1fr 268px;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .detail-layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 580px) { .detail-layout { padding-left: 16px; padding-right: 16px; } }
+
+    /* ─────────────────────────────────────────
+       AI NOTICE
+    ───────────────────────────────────────── */
+    .ai-notice {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: linear-gradient(135deg, #FFF7ED, #FEF3C7);
+      border: 1px solid var(--orange-border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 32px;
+    }
+    .ai-notice-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .ai-notice-text { font-size: 13px; color: #92400E; line-height: 1.55; }
+    .ai-notice-text strong { font-weight: 700; color: #78350F; }
+
+    /* ─────────────────────────────────────────
+       ARTICLE BODY
+    ───────────────────────────────────────── */
+    .article-paragraph {
+      font-size: 16px;
+      line-height: 1.82;
+      color: #27272A;
+      margin-bottom: 24px;
+    }
+
+    .article-paragraph strong { font-weight: 700; color: var(--text-primary); }
+
+    /* ─────────────────────────────────────────
+       LINKEDIN PULLQUOTE — styled like real posts
+    ───────────────────────────────────────── */
+    .li-post {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 36px 0;
+      background: var(--bg);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+      transition: box-shadow 0.15s;
+    }
+    .li-post:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 28px rgba(0,0,0,0.08); }
+
+    .li-post-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px 20px 0;
+    }
+    .li-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F97316, #EF4444);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+      letter-spacing: -0.02em;
+    }
+    .li-author-info {}
+    .li-author-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .li-author-title {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .li-post-date {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+    }
+
+    .li-post-body {
+      padding: 14px 20px 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      white-space: pre-line;
+    }
+    .li-post-body .li-bold { font-weight: 700; }
+    .li-post-body .li-hashtag { color: var(--linkedin-blue); font-weight: 600; }
+
+    .li-reactions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px 14px;
+      margin-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .li-reaction-icons {
+      display: flex;
+      align-items: center;
+      gap: -4px;
+    }
+    .li-reaction-emoji {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      border: 1.5px solid white;
+      background: #fff;
+      margin-right: -4px;
+    }
+    .li-reaction-count {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-left: 8px;
+    }
+    .li-reaction-right {
+      display: flex;
+      gap: 16px;
+    }
+    .li-comment-count, .li-repost-count {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .li-actions {
+      display: flex;
+      border-top: 1px solid var(--border);
+    }
+    .li-action-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: default;
+      transition: background 0.1s;
+    }
+    .li-action-btn:hover { background: var(--surface); }
+    .li-action-btn svg { width: 16px; height: 16px; }
+
+    .li-post-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--linkedin-blue);
+      background: #EBF4FF;
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin: 0 20px 14px;
+    }
+
+    /* ─────────────────────────────────────────
+       SIDEBAR
+    ───────────────────────────────────────── */
+    .detail-sidebar { }
+    .sidebar-sticky { position: sticky; top: 78px; }
+
+    .sidebar-section { margin-bottom: 28px; }
+
+    .sidebar-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+    }
+
+    .sidebar-topic {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: color 0.1s;
+    }
+    .sidebar-topic:hover { color: var(--orange); }
+    .sidebar-topic:hover .sidebar-topic-arrow { color: var(--orange); transform: translateX(2px); }
+    .sidebar-topic:last-of-type { border-bottom: none; }
+
+    .sidebar-topic-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .sidebar-topic-icon.purple { background: var(--purple-light); }
+    .sidebar-topic-icon.blue   { background: var(--blue-light); }
+    .sidebar-topic-icon.orange { background: var(--orange-light); }
+
+    .sidebar-topic-info { flex: 1; min-width: 0; }
+    .sidebar-topic-name { font-size: 13px; font-weight: 600; color: inherit; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sidebar-topic-count { font-size: 11px; color: var(--text-tertiary); margin-top: 1px; }
+    .sidebar-topic-arrow { font-size: 13px; color: var(--text-tertiary); transition: color 0.1s, transform 0.1s; flex-shrink: 0; }
+
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .sidebar-card-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 10px;
+    }
+    .sidebar-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .sidebar-card strong { color: var(--text-primary); font-weight: 700; }
+
+    .sidebar-back-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      margin-top: 14px;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.1s, color 0.1s, border-color 0.1s;
+    }
+    .sidebar-back-btn:hover { background: var(--surface-2); color: var(--text-primary); border-color: var(--border-strong); }
+
+    /* milestone strip */
+    .milestone-strip {
+      background: var(--dark-bg);
+      border-top: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--dark-border);
+      padding: 28px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .milestone {
+      flex: 1;
+      min-width: 160px;
+      text-align: center;
+      padding: 0 20px;
+      border-right: 1px solid var(--dark-border);
+    }
+    .milestone:last-child { border-right: none; }
+    .milestone-company {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+    .milestone-role {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark-text);
+      margin-bottom: 3px;
+    }
+    .milestone-years {
+      font-size: 11px;
+      color: var(--dark-text-2);
+    }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    footer {
+      background: var(--dark-bg);
+      border-top: 1px solid var(--dark-border);
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-left { font-size: 13px; color: var(--dark-text-2); }
+    .footer-left strong { color: var(--dark-text); font-weight: 700; }
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--dark-text-2);
+    }
+    .footer-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav>
+  <a class="nav-brand" href="#" onclick="showPage('hub'); return false;">
+    <div class="nav-avatar">DW</div>
+    <span class="nav-name">Dan <span>Wallenberg</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('hub'); return false;">About</a></li>
+    <li><a href="#" onclick="showPage('hub'); return false;" class="active">Expertise</a></li>
+    <li><a href="#" onclick="return false;">Writing</a></li>
+    <li><a href="#" onclick="return false;">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HUB PAGE
+═══════════════════════════════════════════ -->
+<div id="hub-page" class="page active">
+
+  <div class="hub-hero">
+    <div class="hero-glow-left"></div>
+    <div class="hub-hero-inner">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        Expertise · Synthesized from 8 years of posts
+      </div>
+      <h1 class="hub-title">
+        Five startups.<br>
+        <span class="highlight">One obsession.</span>
+      </h1>
+      <p class="hub-description">
+        I've built marketing machines at five early-stage B2B startups — from zero-revenue to Series B and beyond.
+        Below is what I actually think about, based on <strong>109 LinkedIn posts</strong> an AI has organized so you
+        don't have to scroll eight years of my feed.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">5<span>×</span></div>
+          <div class="hero-stat-label">Startups</div>
+        </div>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">109</div>
+          <div class="hero-stat-label">Posts synthesized</div>
+        </div>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">3</div>
+          <div class="hero-stat-label">Core topics</div>
+        </div>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">8<span>yrs</span></div>
+          <div class="hero-stat-label">Of opinions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- career strip -->
+  <div class="milestone-strip">
+    <div class="milestone">
+      <div class="milestone-company">Fieldline</div>
+      <div class="milestone-role">Marketing Manager</div>
+      <div class="milestone-years">2016 – 2017</div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-company">Stackform</div>
+      <div class="milestone-role">Head of Demand Gen</div>
+      <div class="milestone-years">2017 – 2019</div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-company">Routebase</div>
+      <div class="milestone-role">Director of Marketing Ops</div>
+      <div class="milestone-years">2019 – 2021</div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-company">Veloxa</div>
+      <div class="milestone-role">VP Marketing</div>
+      <div class="milestone-years">2021 – 2023</div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-company">Meridian AI</div>
+      <div class="milestone-role">Chief Marketing Officer</div>
+      <div class="milestone-years">2023 – Present</div>
+    </div>
+  </div>
+
+  <!-- topic cards -->
+  <div class="topics-section">
+    <div class="section-header">
+      <span class="section-title">3 topics</span>
+      <span class="section-subtitle">Click any topic to read the full synthesis →</span>
+    </div>
+    <div class="topics-grid">
+
+      <!-- Demand Gen -->
+      <a class="topic-card orange" href="#" onclick="showPage('detail'); return false;">
+        <div class="card-top"></div>
+        <div class="card-body">
+          <div class="card-icon">📈</div>
+          <div class="topic-name">
+            Demand Generation
+            <span class="topic-arrow">↗</span>
+          </div>
+          <p class="topic-summary">
+            Why most demand gen programs are just expensive noise, and what actually moves
+            pipeline. From intent-based targeting to building content engines that compound,
+            I've tested nearly everything — here's what stuck.
+          </p>
+          <div class="card-footer">
+            <span class="post-count">42 posts</span>
+            <span class="post-since">Since 2017</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- RevOps -->
+      <a class="topic-card purple" href="#" onclick="return false;">
+        <div class="card-top"></div>
+        <div class="card-body">
+          <div class="card-icon">⚙️</div>
+          <div class="topic-name">
+            RevOps & Attribution
+            <span class="topic-arrow">↗</span>
+          </div>
+          <p class="topic-summary">
+            Attribution modeling is broken — but you still need it. I write about building
+            RevOps infrastructure that actually serves the business: CRM hygiene, multi-touch
+            models, and the reports that executives actually read.
+          </p>
+          <div class="card-footer">
+            <span class="post-count">38 posts</span>
+            <span class="post-since">Since 2016</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- GTM Strategy -->
+      <a class="topic-card blue" href="#" onclick="return false;">
+        <div class="card-top"></div>
+        <div class="card-body">
+          <div class="card-icon">🚀</div>
+          <div class="topic-name">
+            Startup GTM Strategy
+            <span class="topic-arrow">↗</span>
+          </div>
+          <p class="topic-summary">
+            ICP definition, positioning, launch sequencing — the decisions you make in the
+            first six months of a GTM motion echo for years. I reflect on what I'd do
+            differently and why most startup marketing fails before it starts.
+          </p>
+          <div class="card-footer">
+            <span class="post-count">29 posts</span>
+            <span class="post-since">Since 2017</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left"><strong>Dan Wallenberg</strong> · CMO, Meridian AI · Chicago, IL</div>
+    <div class="footer-badge">
+      <span class="footer-badge-dot"></span>
+      AI-synthesized from LinkedIn · Updated March 2026
+    </div>
+  </footer>
+
+</div><!-- /hub-page -->
+
+
+<!-- ═══════════════════════════════════════════
+     DETAIL PAGE — Demand Generation
+═══════════════════════════════════════════ -->
+<div id="detail-page" class="page">
+
+  <div class="detail-topbar">
+    <button class="back-btn" onclick="showPage('hub')">← Back</button>
+    <nav class="breadcrumb">
+      <a class="breadcrumb-link" href="#" onclick="showPage('hub'); return false;">Expertise</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Demand Generation</span>
+    </nav>
+  </div>
+
+  <div class="detail-hero-band">
+    <div class="detail-hero-inner">
+      <div class="detail-eyebrow">📈 Demand Generation · 42 posts · 2017–2025</div>
+      <h1 class="detail-title">Stop generating demand.<br>Start capturing intent.</h1>
+      <div class="detail-meta">
+        <div class="detail-meta-item">42 posts synthesized</div>
+        <div class="meta-sep"></div>
+        <div class="detail-meta-item">5 companies, 1 pattern</div>
+        <div class="meta-sep"></div>
+        <div class="detail-meta-item">Updated March 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-layout">
+
+    <!-- ── MAIN ── -->
+    <div class="detail-main">
+
+      <div class="ai-notice">
+        <div class="ai-notice-icon">✦</div>
+        <div class="ai-notice-text">
+          <strong>Written from real posts, not from scratch.</strong>
+          This narrative was synthesized from Dan's LinkedIn writing across five companies and eight years.
+          Original posts are embedded throughout — you'll recognize them.
+        </div>
+      </div>
+
+      <p class="article-paragraph">
+        I've run demand generation at five startups, and the lesson that took me longest to accept is this:
+        you can't create demand that doesn't already exist. You can educate. You can build category awareness.
+        You can grow a market slowly over years with the right content and community play. But when you have
+        an 18-month runway and a VP of Sales asking why the pipeline is thin, <strong>"creating demand" is
+        a luxury you don't have.</strong> What you actually need is to find the people who already have the
+        problem you solve and get in front of them before your competitors do.
+      </p>
+
+      <!-- LinkedIn Post 1 -->
+      <div class="li-post">
+        <div class="li-post-header">
+          <div class="li-avatar">DW</div>
+          <div class="li-author-info">
+            <div class="li-author-name">Dan Wallenberg</div>
+            <div class="li-author-title">Head of Demand Gen at Stackform · 3rd+</div>
+            <div class="li-post-date">March 4, 2018 · <span style="font-size:10px;">🌐</span></div>
+          </div>
+        </div>
+        <div class="li-post-body">Unpopular opinion: most "demand gen" programs at early-stage startups are actually just brand programs with a pipeline number attached to them.
+
+Real demand gen is ruthless about intent. It says: who is in-market RIGHT NOW, what are they searching, what events do they attend, what communities are they in — and how do we get there first?
+
+At Stackform we stopped running broad awareness plays in month 4 and went full intent-based. G2 reviews, specific job titles + keywords on LinkedIn, retargeting anyone who visited competitor sites.
+
+Pipeline went up 3x in a quarter. Spending went down 20%.
+
+If your demand gen program can't tell me who it's targeting this week, it's not demand gen. It's hope. <span class="li-hashtag">#demandgen</span> <span class="li-hashtag">#b2bmarketing</span> <span class="li-hashtag">#startupmarketing</span></div>
+        <div class="li-post-label">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Original LinkedIn post
+        </div>
+        <div class="li-reactions">
+          <div style="display:flex;align-items:center;">
+            <div class="li-reaction-emoji">👍</div>
+            <div class="li-reaction-emoji">💡</div>
+            <div class="li-reaction-emoji">🔥</div>
+            <span class="li-reaction-count">847</span>
+          </div>
+          <div class="li-reaction-right">
+            <span class="li-comment-count">91 comments</span>
+            <span class="li-repost-count">114 reposts</span>
+          </div>
+        </div>
+        <div class="li-actions">
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+            Like
+          </div>
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Comment
+          </div>
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+            Repost
+          </div>
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            Send
+          </div>
+        </div>
+      </div>
+
+      <p class="article-paragraph">
+        At Routebase we were burning $80K a month on top-of-funnel content and seeing maybe 12% of it
+        touch any deal that closed. The content was good — genuinely good. But it was attracting the wrong
+        people, or attracting the right people too early, before they had budget authority or an active
+        project. The fix wasn't to make better content. <strong>The fix was to understand where in the
+        buying journey each piece of content was useful</strong>, and stop expecting early-stage educational
+        content to drive pipeline directly. Once we stopped measuring the wrong thing, we could actually
+        invest in the right mix.
+      </p>
+
+      <p class="article-paragraph">
+        The MQL debate consumed a truly embarrassing number of hours of my career. At three different
+        companies I was handed an MQL definition written by someone who'd never sat in a sales call —
+        usually a point threshold on form fills and page views that was optimized to make marketing look
+        good, not to generate revenue. The MQLs flowed. The sales team ignored them. We'd argue about
+        lead quality. Nothing changed. What finally worked was abandoning MQLs in favor of a buying
+        committee model: who in the target account was engaged, at what depth, and did the company
+        profile match? Messier to build. Much harder to game.
+      </p>
+
+      <!-- LinkedIn Post 2 -->
+      <div class="li-post">
+        <div class="li-post-header">
+          <div class="li-avatar">DW</div>
+          <div class="li-author-info">
+            <div class="li-author-name">Dan Wallenberg</div>
+            <div class="li-author-title">Director of Marketing Ops at Routebase · 3rd+</div>
+            <div class="li-post-date">January 17, 2020 · <span style="font-size:10px;">🌐</span></div>
+          </div>
+        </div>
+        <div class="li-post-body">I abolished MQLs at Routebase six months ago. Here's what happened.
+
+Sales stopped ignoring marketing leads. Not because the leads got better overnight — but because we changed what we were handing them.
+
+Instead of "this person downloaded an ebook and visited pricing," we gave them: account-level engagement score, job title of most engaged contact, specific pages viewed, time since first touch.
+
+Same data. Different framing. The rep could actually do something with it.
+
+MQLs were a reporting construct that made marketers feel good and gave sales reps nothing to work with.
+
+Abolish the MQL. Build a signal. <span class="li-hashtag">#revops</span> <span class="li-hashtag">#demandgen</span> <span class="li-hashtag">#b2bsales</span></div>
+        <div class="li-post-label">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Original LinkedIn post
+        </div>
+        <div class="li-reactions">
+          <div style="display:flex;align-items:center;">
+            <div class="li-reaction-emoji">👍</div>
+            <div class="li-reaction-emoji">🔥</div>
+            <div class="li-reaction-emoji">💡</div>
+            <span class="li-reaction-count">2.1K</span>
+          </div>
+          <div class="li-reaction-right">
+            <span class="li-comment-count">203 comments</span>
+            <span class="li-repost-count">287 reposts</span>
+          </div>
+        </div>
+        <div class="li-actions">
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+            Like
+          </div>
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Comment
+          </div>
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+            Repost
+          </div>
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            Send
+          </div>
+        </div>
+      </div>
+
+      <p class="article-paragraph">
+        By the time I got to Veloxa, I'd started thinking about demand generation as a flywheel rather
+        than a funnel. Funnels imply a one-time journey. Flywheels imply that momentum compounds. The
+        best demand gen programs I've run have a content engine that builds SEO authority over 12–18 months,
+        a community layer that generates organic advocacy, and a paid layer that accelerates in-market
+        accounts while the organic motion scales. Each layer feeds the others. Cut one and the others
+        slow down. <strong>The mistake most teams make is treating paid as the whole program</strong> —
+        it's the accelerant, not the fuel.
+      </p>
+
+      <!-- LinkedIn Post 3 -->
+      <div class="li-post">
+        <div class="li-post-header">
+          <div class="li-avatar">DW</div>
+          <div class="li-author-info">
+            <div class="li-author-name">Dan Wallenberg</div>
+            <div class="li-author-title">VP Marketing at Veloxa · 3rd+</div>
+            <div class="li-post-date">August 9, 2022 · <span style="font-size:10px;">🌐</span></div>
+          </div>
+        </div>
+        <div class="li-post-body">We 3x'd qualified pipeline at Veloxa in Q2 without increasing paid spend. Thread on how 👇
+
+1/ We stopped trying to generate demand and started capturing it. Obvious in theory, hard in practice.
+
+2/ Built a 60-topic SEO cluster around our category's actual buying questions. Not vanity terms. The stuff prospects search at 11pm when their current tool is failing them.
+
+3/ Added a community channel (Slack) for practitioners in our space. Not to sell — to be useful. 400 members in 90 days. 22% became pipeline within 6 months.
+
+4/ Used paid ONLY to retarget engaged accounts (visited 3+ pages or was in community). CPL went up 40%. Pipeline quality went up 3x. Worth it.
+
+5/ Told sales reps to stop cold outbounding accounts that haven't shown intent. Hard conversation. Revenue up 28% in the next quarter.
+
+The flywheel is slow to start. But once it's spinning, you can't stop it.
+
+What's working for your team right now? <span class="li-hashtag">#demandgen</span> <span class="li-hashtag">#contentmarketing</span> <span class="li-hashtag">#b2bmarketing</span></div>
+        <div class="li-post-label">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Original LinkedIn post
+        </div>
+        <div class="li-reactions">
+          <div style="display:flex;align-items:center;">
+            <div class="li-reaction-emoji">🔥</div>
+            <div class="li-reaction-emoji">👍</div>
+            <div class="li-reaction-emoji">💡</div>
+            <span class="li-reaction-count">3.8K</span>
+          </div>
+          <div class="li-reaction-right">
+            <span class="li-comment-count">318 comments</span>
+            <span class="li-repost-count">512 reposts</span>
+          </div>
+        </div>
+        <div class="li-actions">
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+            Like
+          </div>
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Comment
+          </div>
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+            Repost
+          </div>
+          <div class="li-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            Send
+          </div>
+        </div>
+      </div>
+
+      <p class="article-paragraph">
+        Now at Meridian AI, the environment is different again — AI-native tools, a market that's
+        simultaneously crowded and confused, buyers who've been burned by hype cycles and are more
+        skeptical than ever. The demand gen playbook I'd built over the previous four companies needed
+        recalibration. What I'm learning: in emerging categories, you really do have to invest in
+        education before you can capture intent, because the intent signals don't exist yet. The buyers
+        don't know what to search for. The community hasn't formed. The category terms aren't established.
+        You're back to the top of the funnel — but this time you know exactly how long the bottom takes
+        to fill, and you can plan for it instead of panicking.
+      </p>
+
+    </div><!-- /detail-main -->
+
+
+    <!-- ── SIDEBAR ── -->
+    <div class="detail-sidebar">
+      <div class="sidebar-sticky">
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Other Topics</div>
+
+          <a class="sidebar-topic" href="#" onclick="return false;">
+            <div class="sidebar-topic-icon purple">⚙️</div>
+            <div class="sidebar-topic-info">
+              <div class="sidebar-topic-name">RevOps & Attribution</div>
+              <div class="sidebar-topic-count">38 posts · Since 2016</div>
+            </div>
+            <span class="sidebar-topic-arrow">→</span>
+          </a>
+
+          <a class="sidebar-topic" href="#" onclick="return false;">
+            <div class="sidebar-topic-icon blue">🚀</div>
+            <div class="sidebar-topic-info">
+              <div class="sidebar-topic-name">Startup GTM Strategy</div>
+              <div class="sidebar-topic-count">29 posts · Since 2017</div>
+            </div>
+            <span class="sidebar-topic-arrow">→</span>
+          </a>
+
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">About this page</div>
+          <p>
+            Built from <strong>42 LinkedIn posts</strong> spanning Stackform, Routebase,
+            Veloxa, and Meridian AI. An LLM identified recurring themes across Dan's
+            writing and synthesized this narrative. Original post text is preserved
+            verbatim in the embedded cards above.
+          </p>
+        </div>
+
+        <button class="sidebar-back-btn" onclick="showPage('hub')">← All topics</button>
+
+      </div>
+    </div><!-- /sidebar -->
+
+  </div><!-- /detail-layout -->
+
+  <footer>
+    <div class="footer-left"><strong>Dan Wallenberg</strong> · CMO, Meridian AI · Chicago, IL</div>
+    <div class="footer-badge">
+      <span class="footer-badge-dot"></span>
+      AI-synthesized from LinkedIn · Updated March 2026
+    </div>
+  </footer>
+
+</div><!-- /detail-page -->
+
+
+<script>
+  function showPage(which) {
+    const hub    = document.getElementById('hub-page');
+    const detail = document.getElementById('detail-page');
+    hub.classList.toggle('active', which === 'hub');
+    detail.classList.toggle('active', which === 'detail');
+    // re-trigger entry animation
+    const target = document.getElementById(which + '-page');
+    target.style.animation = 'none';
+    target.offsetHeight;
+    target.style.animation = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

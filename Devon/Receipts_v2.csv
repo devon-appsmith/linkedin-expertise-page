@@ -1,0 +1,50 @@
+First Name,Last Name,Billing Country,Postal Code,Transaction Made At,Payment Method Type,Invoice Number,Description,Tax Amount,Sub Total,Total Amount,Currency Code
+Devon,Wells,us,43081,03/19/24 12:00 AM UTC,CREDIT_CARD,9355006506,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,02/19/24 12:00 AM UTC,CREDIT_CARD,9241404906,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,01/19/24 12:00 AM UTC,CREDIT_CARD,9129278086,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,12/19/23 12:00 AM UTC,CREDIT_CARD,9025631496,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,11/19/23 12:00 AM UTC,CREDIT_CARD,8928196226,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,10/19/23 12:00 AM UTC,CREDIT_CARD,8826832326,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,09/19/23 12:00 AM UTC,CREDIT_CARD,8721671456,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,08/19/23 12:00 AM UTC,CREDIT_CARD,8604317086,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,07/19/23 12:00 AM UTC,CREDIT_CARD,8502402926,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,06/19/23 12:00 AM UTC,CREDIT_CARD,8409609026,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,10/30/22 12:00 AM UTC,CREDIT_CARD,7584137226,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,09/30/22 12:00 AM UTC,CREDIT_CARD,7480198416,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,08/30/22 12:00 AM UTC,CREDIT_CARD,7370454866,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,07/30/22 12:00 AM UTC,CREDIT_CARD,7246859556,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,06/30/22 12:00 AM UTC,CREDIT_CARD,7118966706,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,05/30/22 12:00 AM UTC,CREDIT_CARD,6988478696,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,us,43081,04/30/22 12:00 AM UTC,CREDIT_CARD,6880844856,Bundle of Career subscription with Group and LIL,3.0,42.99,42.99,USD
+Devon,Wells,ca,V6G2E9,09/09/15 12:00 AM UTC,CREDIT_CARD,3112648293,Business Plus subscription,0.0,60.99,60.99,CAD
+Devon,Wells,ca,V6G2E9,08/09/15 12:00 AM UTC,CREDIT_CARD,2999929853,Business Plus subscription,0.0,60.99,60.99,CAD
+Devon,Wells,ca,V6G2E9,07/09/15 12:00 AM UTC,CREDIT_CARD,2896352333,Business Plus subscription,0.0,60.99,60.99,CAD
+Devon,Wells,ca,V6G2E9,06/09/15 12:00 AM UTC,CREDIT_CARD,2795040323,Business Plus subscription,0.0,60.99,60.99,CAD
+Devon,Wells,ca,V6G2E9,05/09/15 12:00 AM UTC,CREDIT_CARD,2697766203,Business Plus subscription,0.0,60.99,60.99,CAD
+Devon,Wells,ca,V6G2E9,04/09/15 12:00 AM UTC,CREDIT_CARD,2604361773,Business Plus subscription,0.0,60.99,60.99,CAD
+Devon,Wells,ca,V6G2E9,03/09/15 12:00 AM UTC,CREDIT_CARD,2505795053,Business Plus subscription,0.0,60.99,60.99,CAD
+Devon,Wells,ca,V6G2E9,02/09/15 12:00 AM UTC,CREDIT_CARD,2419405513,Business Plus subscription,0.0,60.99,60.99,CAD
+Devon,Wells,ca,V5M 4S6,06/07/14 12:00 AM UTC,CREDIT_CARD,793948411,Business subscription,0.0,30.99,30.99,CAD
+Devon,Wells,ca,V5M 4S6,05/07/14 12:00 AM UTC,CREDIT_CARD,665767891,Business subscription,0.0,15.5,15.5,CAD
+Devon,Wells,ca,V5M 4S6,04/07/14 12:00 AM UTC,,561640431,Business subscription,0.0,15.5,15.5,CAD
+Devon,Wells,ca,V5M 4S6,06/14/13 12:00 AM UTC,,74068675,Business Plus subscription,0.0,0.0,0.0,CAD
+Devon,Wells,US,43081,02/28/26 02:25 PM UTC,CARD,101210712333,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,01/28/26 02:25 PM UTC,CARD,101198196453,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,12/28/25 02:25 PM UTC,CARD,101166500046,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,11/28/25 02:25 PM UTC,CARD,101161997632,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,10/28/25 02:25 PM UTC,CARD,101157805902,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,09/28/25 02:25 PM UTC,CARD,101147248252,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,08/28/25 02:25 PM UTC,CARD,101136804559,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,07/28/25 02:25 PM UTC,CARD,101126026649,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,06/28/25 02:25 PM UTC,CARD,101116448050,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,05/28/25 02:25 PM UTC,CARD,101105743163,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,04/28/25 02:25 PM UTC,CARD,10195514354,Premium Career,3.20,39.99,43.19,USD
+Devon,Wells,US,43081,03/28/25 02:25 PM UTC,CARD,10186047298,Premium Career,3.00,39.99,42.99,USD
+Devon,Wells,US,43081,02/28/25 02:25 PM UTC,CARD,10176244652,Premium Career,3.00,39.99,42.99,USD
+Devon,Wells,US,43081,01/30/25 02:25 PM UTC,CARD,10167849457,Premium Career,3.00,39.99,42.99,USD
+Devon,Wells,US,43081,12/30/24 02:25 PM UTC,CARD,10159356659,Premium Career,3.00,39.99,42.99,USD
+Devon,Wells,US,43081,11/30/24 02:25 PM UTC,CARD,10151980948,Premium Career,3.00,39.99,42.99,USD
+Devon,Wells,US,43081,10/30/24 02:25 PM UTC,CARD,10143864366,Premium Career,3.00,39.99,42.99,USD
+Devon,Wells,US,43081,09/30/24 02:25 PM UTC,CARD,10135339428,Premium Career,3.00,39.99,42.99,USD
+Devon,Wells,US,43081,08/31/24 02:25 PM UTC,CARD,10128297670,Premium Career,3.00,39.99,42.99,USD
+Devon,Wells,US,43081,07/31/24 02:24 PM UTC,CARD,10922131239,Premium Career,0.00,0.00,0.00,USD
