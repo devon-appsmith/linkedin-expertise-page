@@ -19,11 +19,9 @@
       --text-2:         #57534E;
       --text-3:         #A09890;
       --accent:         #0E7490;
-      --accent-mid:     #0891B2;
       --accent-light:   #ECFEFF;
       --accent-border:  #A5F3FC;
       --li-blue:        #0A66C2;
-      --li-blue-bg:     #EBF3FB;
       --serif:          'DM Serif Display', Georgia, serif;
       --sans:           'Inter', -apple-system, sans-serif;
     }
@@ -49,7 +47,6 @@
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
-
     .nav-brand {
       display: flex; align-items: center; gap: 10px;
       text-decoration: none; color: var(--text);
@@ -58,19 +55,13 @@
       width: 30px; height: 30px; border-radius: 8px;
       background: linear-gradient(135deg, #0E7490, #0891B2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 700; color: white;
-      font-family: var(--sans); flex-shrink: 0;
+      font-size: 11px; font-weight: 700; color: white; flex-shrink: 0;
     }
-    .nav-name {
-      font-family: var(--sans);
-      font-size: 14px; font-weight: 600;
-      letter-spacing: -0.01em;
-    }
+    .nav-name { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; }
     .nav-links { display: flex; gap: 2px; list-style: none; }
     .nav-links a {
-      font-size: 13px; font-weight: 500;
-      color: var(--text-2); text-decoration: none;
-      padding: 5px 10px; border-radius: 6px;
+      font-size: 13px; font-weight: 500; color: var(--text-2);
+      text-decoration: none; padding: 5px 10px; border-radius: 6px;
       transition: background 0.12s, color 0.12s;
     }
     .nav-links a:hover { background: var(--surface); color: var(--text); }
@@ -79,58 +70,42 @@
     /* ── PAGES ── */
     .page { display: none; }
     .page.active { display: block; animation: fadeUp 0.2s ease both; }
-
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(8px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ══════════════════════════════════════════
-       HUB PAGE
-    ══════════════════════════════════════════ */
+    /* ══ HUB ══ */
     .hub-hero {
-      max-width: 780px;
-      margin: 0 auto;
+      max-width: 780px; margin: 0 auto;
       padding: 72px 28px 56px;
     }
-
     .hub-kicker {
-      font-family: var(--sans);
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.09em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 20px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 20px;
       display: flex; align-items: center; gap: 7px;
     }
     .kicker-line {
       display: inline-block; width: 20px; height: 1.5px;
       background: var(--accent); border-radius: 2px;
     }
-
     .hub-title {
       font-family: var(--serif);
       font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      margin-bottom: 20px;
+      line-height: 1.1; letter-spacing: -0.01em;
+      color: var(--text); margin-bottom: 20px;
     }
-    .hub-title em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
+    .hub-title em { font-style: italic; color: var(--accent); }
     .hub-bio {
-      font-size: 16px; line-height: 1.78;
-      color: var(--text-2); max-width: 600px;
-      margin-bottom: 32px;
+      font-size: 16px; line-height: 1.78; color: var(--text-2);
+      max-width: 600px; margin-bottom: 32px;
     }
     .hub-bio strong { color: var(--text); font-weight: 600; }
-
     .hub-byline {
       display: flex; align-items: center; gap: 10px;
       font-size: 13px; color: var(--text-3);
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
+      padding-top: 24px; border-top: 1px solid var(--border);
     }
     .byline-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--border-strong); }
 
@@ -139,34 +114,25 @@
       max-width: 1100px; margin: 0 auto;
       padding: 4px 28px 96px;
     }
-
     .grid-label {
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 16px;
-      padding-bottom: 14px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-3);
+      margin-bottom: 16px; padding-bottom: 14px;
       border-bottom: 1px solid var(--border);
     }
-
     .topics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
     }
     @media (max-width: 860px) { .topics-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 560px) {
       .topics-grid { grid-template-columns: 1fr; }
       nav, .hub-hero, .topics-section { padding-left: 16px; padding-right: 16px; }
     }
-
     .topic-card {
       display: block; text-decoration: none; color: inherit;
-      border: 1px solid var(--border);
-      border-radius: 14px; padding: 26px 24px 22px;
-      background: var(--bg);
+      border: 1px solid var(--border); border-radius: 14px;
+      padding: 26px 24px 22px; background: var(--bg);
       transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
-      position: relative; overflow: hidden;
     }
     .topic-card:hover {
       border-color: var(--accent-border);
@@ -175,28 +141,21 @@
     }
     .topic-card-num {
       font-family: var(--serif); font-style: italic;
-      font-size: 13px; color: var(--text-3);
-      margin-bottom: 14px;
+      font-size: 13px; color: var(--text-3); margin-bottom: 14px;
     }
     .topic-card-name {
-      font-family: var(--serif);
-      font-size: 20px; line-height: 1.2;
-      letter-spacing: -0.01em;
-      color: var(--text); margin-bottom: 12px;
+      font-family: var(--serif); font-size: 20px; line-height: 1.2;
+      letter-spacing: -0.01em; color: var(--text); margin-bottom: 12px;
       display: flex; align-items: flex-start; justify-content: space-between; gap: 10px;
     }
     .topic-arrow {
-      font-size: 16px; color: var(--text-3); flex-shrink: 0;
-      margin-top: 3px;
+      font-size: 16px; color: var(--text-3); flex-shrink: 0; margin-top: 3px;
       transition: transform 0.15s, color 0.15s;
     }
     .topic-card:hover .topic-arrow { transform: translate(3px, -3px); color: var(--accent); }
-
     .topic-summary {
-      font-size: 14px; color: var(--text-2); line-height: 1.65;
-      margin-bottom: 20px;
+      font-size: 14px; color: var(--text-2); line-height: 1.65; margin-bottom: 20px;
     }
-
     .topic-footer {
       display: flex; align-items: center; gap: 8px;
       padding-top: 16px; border-top: 1px solid var(--border);
@@ -209,11 +168,8 @@
     }
     .topic-footer-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--border-strong); }
 
-    /* ── AI RECOVERY NOTICE ── */
-    .recovery-notice {
-      max-width: 1100px; margin: 0 auto 16px;
-      padding: 0 28px;
-    }
+    /* ── RECOVERY NOTICE ── */
+    .recovery-notice { max-width: 1100px; margin: 0 auto 16px; padding: 0 28px; }
     .recovery-notice-inner {
       display: flex; gap: 10px; align-items: flex-start;
       background: var(--surface); border: 1px solid var(--border);
@@ -223,21 +179,17 @@
     .recovery-text { font-size: 12px; color: var(--text-2); line-height: 1.5; }
     .recovery-text strong { font-weight: 600; color: var(--text); }
 
-    /* ══════════════════════════════════════════
-       DETAIL PAGE
-    ══════════════════════════════════════════ */
+    /* ══ DETAIL PAGE ══ */
     .detail-topbar {
       padding: 0 28px; height: 42px;
       display: flex; align-items: center; gap: 8px;
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
+      border-bottom: 1px solid var(--border); background: var(--surface);
     }
     .breadcrumb { display: flex; align-items: center; gap: 7px; font-size: 13px; }
     .bc-link { color: var(--text-2); text-decoration: none; font-weight: 500; transition: color 0.1s; }
     .bc-link:hover { color: var(--accent); }
     .bc-sep { color: var(--border-strong); font-size: 15px; }
     .bc-current { color: var(--text); font-weight: 500; }
-
     .back-btn {
       border: none; background: none; cursor: pointer;
       font-family: var(--sans); font-size: 12px; font-weight: 500;
@@ -253,17 +205,15 @@
       display: grid; grid-template-columns: 1fr 252px;
       gap: 68px; align-items: start;
     }
-    @media (max-width: 840px) {
-      .detail-layout { grid-template-columns: 1fr; gap: 40px; }
-    }
+    @media (max-width: 840px) { .detail-layout { grid-template-columns: 1fr; gap: 40px; } }
     @media (max-width: 560px) { .detail-layout { padding-left: 16px; padding-right: 16px; } }
 
-    /* detail header */
-    .detail-header { padding: 52px 0 36px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .detail-header {
+      padding: 52px 0 36px; border-bottom: 1px solid var(--border); margin-bottom: 32px;
+    }
     .detail-kicker {
       font-size: 11px; font-weight: 600; letter-spacing: 0.09em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 14px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
       display: flex; align-items: center; gap: 7px;
     }
     .detail-title {
@@ -280,108 +230,73 @@
     .detail-meta-item { display: flex; align-items: center; gap: 5px; }
     .detail-meta-sep { width: 1px; height: 13px; background: var(--border-strong); }
 
-    /* AI assembled notice */
     .ai-notice {
       display: flex; gap: 11px; align-items: flex-start;
-      background: var(--accent-light);
-      border: 1px solid var(--accent-border);
-      border-radius: 10px; padding: 14px 18px;
-      margin-bottom: 32px;
+      background: var(--accent-light); border: 1px solid var(--accent-border);
+      border-radius: 10px; padding: 14px 18px; margin-bottom: 32px;
     }
     .ai-notice-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; color: var(--accent); }
     .ai-notice-text { font-size: 13px; color: #155E75; line-height: 1.55; }
     .ai-notice-text strong { font-weight: 600; color: #0E4F63; }
 
-    /* article */
+    /* ── ARTICLE ── */
     .article-p {
-      font-size: 16px; line-height: 1.82; color: #28211D;
-      margin-bottom: 26px;
+      font-size: 16px; line-height: 1.82; color: #28211D; margin-bottom: 26px;
     }
     .article-p em { font-style: italic; }
 
-    /* ── LINKEDIN POST CARD ── */
-    .li-post {
-      border: 1px solid var(--border);
-      border-radius: 12px; overflow: hidden;
-      margin: 34px 0;
-      background: #FFFFFF;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 14px rgba(0,0,0,0.04);
+    /* ── PULLQUOTE ── */
+    .pullquote {
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 32px 0;
     }
-
-    .li-post-head {
-      display: flex; align-items: flex-start; gap: 11px;
-      padding: 18px 18px 0;
+    .pq-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 14px;
     }
-    .li-av {
-      width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+    .pq-attr {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 12px; color: var(--text-3);
+    }
+    .pq-av {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
       background: linear-gradient(135deg, #0E7490, #0891B2);
       display: flex; align-items: center; justify-content: center;
-      font-family: var(--sans); font-size: 13px; font-weight: 700; color: white;
+      font-size: 7px; font-weight: 700; color: white;
     }
-    .li-info {}
-    .li-name { font-size: 14px; font-weight: 700; color: var(--text); }
-    .li-role { font-size: 12px; color: var(--text-2); line-height: 1.4; margin-top: 1px; }
-    .li-date { font-size: 11px; color: var(--text-3); margin-top: 2px; }
-
-    .li-body {
-      padding: 13px 18px 0;
-      font-size: 14px; line-height: 1.72; color: var(--text);
-      white-space: pre-wrap;
+    .pq-name { font-weight: 600; color: var(--text-2); }
+    .pq-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--border-strong); flex-shrink: 0; }
+    .pq-link {
+      display: inline-flex; align-items: center; gap: 3px;
+      color: var(--li-blue); text-decoration: none; font-weight: 500;
+      transition: opacity 0.1s;
     }
-
-    .li-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 10px 18px 14px; margin-top: 10px;
-    }
-    .li-badge {
-      display: inline-flex; align-items: center; gap: 4px;
-      font-size: 11px; font-weight: 600;
-      color: var(--li-blue); background: var(--li-blue-bg);
-      padding: 3px 9px 3px 7px; border-radius: 4px;
-    }
-    .li-badge svg { flex-shrink: 0; }
-    .li-view-link {
-      font-size: 12px; color: var(--text-3); text-decoration: none;
-      transition: color 0.1s;
-    }
-    .li-view-link:hover { color: var(--accent); }
-
-    .li-actions {
-      display: flex; border-top: 1px solid var(--border);
-    }
-    .li-act {
-      flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px;
-      padding: 9px 8px; font-size: 12px; font-weight: 600;
-      color: var(--text-2); cursor: default;
-      transition: background 0.1s;
-    }
-    .li-act:hover { background: var(--surface); }
-    .li-act svg { width: 15px; height: 15px; }
+    .pq-link:hover { opacity: 0.7; }
+    .pq-link svg { flex-shrink: 0; }
 
     /* ── SIDEBAR ── */
     .detail-sidebar { padding-top: 52px; }
     .sidebar-sticky { position: sticky; top: 74px; }
-
     .sidebar-label {
       font-size: 10px; font-weight: 700; letter-spacing: 0.09em;
-      text-transform: uppercase; color: var(--text-3);
-      margin-bottom: 12px;
+      text-transform: uppercase; color: var(--text-3); margin-bottom: 12px;
     }
-
     .sidebar-topic {
       display: flex; align-items: center; gap: 10px;
       padding: 11px 0; border-bottom: 1px solid var(--border);
-      text-decoration: none; color: inherit; cursor: pointer;
-      transition: color 0.1s;
+      text-decoration: none; color: inherit; cursor: pointer; transition: color 0.1s;
     }
     .sidebar-topic:hover { color: var(--accent); }
     .sidebar-topic:hover .st-arrow { color: var(--accent); transform: translateX(2px); }
     .sidebar-topic:last-of-type { border-bottom: none; }
-
-    .st-name {
-      font-family: var(--serif); font-size: 15px;
-      flex: 1; line-height: 1.25;
-    }
+    .st-name { font-family: var(--serif); font-size: 15px; flex: 1; line-height: 1.25; }
     .st-count { font-size: 11px; color: var(--text-3); white-space: nowrap; }
     .st-arrow { font-size: 12px; color: var(--text-3); transition: color 0.1s, transform 0.1s; }
 
@@ -395,14 +310,14 @@
     }
     .sidebar-card p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
     .sidebar-card strong { color: var(--text); font-weight: 600; }
+    .sidebar-card em { font-style: italic; color: var(--text); }
 
     .sidebar-back {
       display: flex; align-items: center; justify-content: center; gap: 6px;
       width: 100%; margin-top: 14px; padding: 9px 16px;
       border: 1px solid var(--border); border-radius: 8px;
       background: var(--bg); font-size: 13px; font-weight: 500;
-      color: var(--text-2); cursor: pointer;
-      font-family: var(--sans);
+      color: var(--text-2); cursor: pointer; font-family: var(--sans);
       transition: background 0.1s, color 0.1s, border-color 0.1s;
     }
     .sidebar-back:hover { background: var(--surface); color: var(--text); border-color: var(--border-strong); }
@@ -426,7 +341,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-brand" href="#" onclick="showPage('hub'); return false;">
     <div class="nav-avatar">DW</div>
@@ -441,9 +355,7 @@
 </nav>
 
 
-<!-- ══════════════════════════════════════════════
-     HUB PAGE
-══════════════════════════════════════════════ -->
+<!-- ══ HUB PAGE ══ -->
 <div id="hub-page" class="page active">
 
   <div class="hub-hero">
@@ -470,7 +382,7 @@
       <span class="recovery-icon">✦</span>
       <span class="recovery-text">
         <strong>Work in progress.</strong> LinkedIn's data export only includes text for recent posts.
-        Older posts are being recovered manually — this page will grow. Post counts below reflect what's been captured so far.
+        Older posts are being recovered manually — this page will grow.
       </span>
     </div>
   </div>
@@ -479,7 +391,6 @@
     <div class="grid-label">3 topics · available posts & comments</div>
     <div class="topics-grid">
 
-      <!-- 1: AI Tools -->
       <a class="topic-card" href="#" onclick="showPage('detail'); return false;">
         <div class="topic-card-num">01</div>
         <div class="topic-card-name">
@@ -498,7 +409,6 @@
         </div>
       </a>
 
-      <!-- 2: Websites -->
       <a class="topic-card" href="#" onclick="return false;">
         <div class="topic-card-num">02</div>
         <div class="topic-card-name">
@@ -518,7 +428,6 @@
         </div>
       </a>
 
-      <!-- 3: Writing / Translation -->
       <a class="topic-card" href="#" onclick="return false;">
         <div class="topic-card-num">03</div>
         <div class="topic-card-name">
@@ -553,9 +462,7 @@
 </div><!-- /hub-page -->
 
 
-<!-- ══════════════════════════════════════════════
-     DETAIL PAGE — AI Tools for Non-Engineers
-══════════════════════════════════════════════ -->
+<!-- ══ DETAIL PAGE — AI Tools for Non-Engineers ══ -->
 <div id="detail-page" class="page">
 
   <div class="detail-topbar">
@@ -569,7 +476,6 @@
 
   <div class="detail-layout">
 
-    <!-- ── MAIN ── -->
     <div class="detail-main">
 
       <div class="detail-header">
@@ -588,224 +494,85 @@
         <span class="ai-notice-icon">✦</span>
         <div class="ai-notice-text">
           <strong>AI-assembled from Devon's real posts.</strong>
-          The article below was synthesized from his LinkedIn writing and comments. Original posts
-          are embedded throughout, verbatim. Post counts are from what's been recovered
-          so far — older posts are being added.
+          The article below was synthesized from his LinkedIn writing and comments. Quoted passages
+          are verbatim — click any source link to read the original.
         </div>
       </div>
 
       <p class="article-p">
-        There's a particular irony in spending years writing about AI for companies building AI
-        before you actually start using it for anything serious. I did this. For a chunk of my
-        career — through MLOps platforms, predictive analytics for utilities, enterprise software
-        that was definitely going to change everything — I was the person writing the blog posts
-        explaining how these tools worked. The engineer would describe the system, I'd translate
-        it into something a non-technical VP could skim on a plane, and we'd both move on. My actual
-        workflow was: open a doc, type words, drink coffee, hope for the best. ChatGPT launched,
-        I played with it, wrote some content about it, and basically kept doing what I'd been doing.
-        (This is embarrassing in retrospect.)
+        There's a specific irony in spending years writing about AI for companies building AI
+        before you actually start using it for anything serious. I did this. My workflow was:
+        open a doc, type words, drink coffee. ChatGPT launched, I played with it, wrote some
+        content about it, and kept doing what I'd been doing. The shift came through
+        accumulation — useful for a quick gut-check, then a user interview, then one afternoon
+        running market analysis and reverse-engineering a competitor's social strategy from
+        screenshots. Work that would've eaten a full day.
       </p>
 
-      <p class="article-p">
-        The shift happened through accumulation rather than epiphany. First it was using Claude
-        to gut-check whether a piece of content made sense. Then helping me prep for a user interview.
-        Then one afternoon I found myself using Claude Code to run deep analysis on market surveys
-        and reverse-engineer a competitor's social media strategy from screenshots — work that would
-        have easily eaten a full day. I'm not a developer. My technical skills top out somewhere
-        around "can write a conditional in Google Sheets." None of that mattered.
-      </p>
-
-      <!-- Real post: Apr 10, 2025 – ChatGPT every day -->
-      <div class="li-post">
-        <div class="li-post-head">
-          <div class="li-av">DW</div>
-          <div class="li-info">
-            <div class="li-name">Devon Wells</div>
-            <div class="li-role">Content Marketing Manager at Appsmith · 3rd+</div>
-            <div class="li-date">April 10, 2025 · 🌐</div>
-          </div>
-        </div>
-        <div class="li-body">I use ChatGPT every day and I have for years. (Scandalous for a writer to admit, I know! 🙀)
-
-But seriously, if you know what you're doing, it's great for making the most mind-numbing parts of your job all but go away. (If you say you have no mind-numbing parts of your job, you are a liar.)
-
-I have limited brain power. By 3 pm, I'm basically a jellyfish. 🪼 But AI lets me squeeze a little more juice out of those drooling afternoons. I can do research, prepare blog outlines, or generate 100 ideas for upcoming content (only three of which will make the roadmap — but three is better than zero).
-
-The catch is that ChatGPT on its own knows diddlysquat about Appsmith (where I work). I'm copying/pasting in old templates as guides, data from surveys I ran, or research I need turned into snappy headlines. If I can even copy/paste it...
-
-So, I can't ask it, "Hey boss, do you remember which of the 1,000 Slack threads last week has that video of the dancing penguin?" 🐧  or "Can you check Mixpanel and whip up a quarterly report for me, tout suite?"
-
-Anyway, the smart folks at Appsmith figured out this was a drag, so they fixed it.
-
-Appsmith Agents takes an LLM, links it to the umpteen tools and data sources you use every day, and stuffs it in a Chrome extension (so you don't have to switch tabs and log in every time you've got a question).
-
-If you've tried it, it seems like something that was always here. Except it's only been here for, like, 10 minutes. (We launched today.)
-
-#AI #AIAgents #EnterpriseAI #LaunchDay</div>
-        <div class="li-footer">
-          <div class="li-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            Original post
-          </div>
-          <a class="li-view-link" href="https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7316084763704889344" target="_blank" rel="noopener">View on LinkedIn ↗</a>
-        </div>
-        <div class="li-actions">
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>Like</div>
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Comment</div>
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>Repost</div>
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>Send</div>
+      <div class="pullquote">
+        <p class="pq-text">I have limited brain power. By 3 pm, I'm basically a jellyfish. 🪼 But AI lets me squeeze a little more juice out of those drooling afternoons.</p>
+        <div class="pq-attr">
+          <div class="pq-av">DW</div>
+          <span class="pq-name">Devon Wells</span>
+          <span class="pq-sep"></span>
+          <span>April 10, 2025</span>
+          <span class="pq-sep"></span>
+          <a class="pq-link" href="https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7316084763704889344" target="_blank" rel="noopener">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            View post
+          </a>
         </div>
       </div>
 
       <p class="article-p">
-        What I've figured out — the hard way, through plenty of garbage output — is that the tool is only
-        half the equation. Knowing what to ask, and giving it enough context that the answer is actually
-        useful, is a learned skill. I still see people share terrible AI output and conclude the tool
-        is overhyped. What happened is they wrote a three-word prompt and expected magic. I'm not
-        claiming to be some genius; I've gotten plenty of garbage back when I've been lazy. But
-        <em>specific prompts plus relevant context</em> is the thing that separates real value from
-        "tried it once and wrote a think piece about why it's overhyped." It's not mystical. It's
-        just briefing a colleague properly — the same skill you already need for working with any human.
+        What I've figured out — mostly the hard way — is that the tool is only half of it.
+        Knowing what to ask, and giving enough context that the answer is actually useful,
+        is a learned skill. It's not mystical "prompt engineering." It's briefing a colleague
+        properly. My clearest window into how these models <em>actually</em> work came from
+        building a trivia game — I needed questions where every answer contained a type of cheese.
+        Any person gets the pattern instantly. The LLM melted down.
       </p>
 
-      <p class="article-p">
-        My favorite window into how these things <em>actually</em> work came from a side project.
-        I run a daily trivia game called Ojipoji, and I was building question sets where every answer
-        contained a type of cheese — things like "Swiss Army Knife," "Brie Larson," or
-        "Colby Donaldson, runner-up on Survivor: The Australian Outback." (I've wasted my life on
-        reality TV. Worth it.) Any person who's been through middle school gets the pattern instantly.
-        The LLM I was using melted down like a Nazi in Raiders of the Lost Ark.
-      </p>
-
-      <!-- Real post: Nov 4, 2025 – LLM cheese trivia -->
-      <div class="li-post">
-        <div class="li-post-head">
-          <div class="li-av">DW</div>
-          <div class="li-info">
-            <div class="li-name">Devon Wells</div>
-            <div class="li-role">Marketing Content Manager at Striveworks · 3rd+</div>
-            <div class="li-date">November 4, 2025 · 🌐</div>
-          </div>
-        </div>
-        <div class="li-body">You want a totally gonzo peek behind the curtain of how an LLM works? Ask it to write a trivia question.
-
-I've been building a trivia game for a few weeks now (details to come). This morning, I was working on new game sets and I hit up my good buddy GPT-5 for some research.
-
-Specifically, I needed some questions where the answers all included a type of cheese. Y'know, things like "Swiss Army Knife", "Brie Larson", or "Colby Donaldson, runner-up on Survivor: The Australian Outback".
-
-Any human immediately gets the pattern (at least if they've passed middle school and wasted their lives watching reality TV like I have). But GPT-5 melts down like a Nazi in Raiders of the Lost Ark. Check the screenshots for its totally bananas line of thinking.
-
-What's happening here? I'll defer to the ML real ones; I'm still a "slightly more savvy than average" marketing doof. But my guess is that a prompt like "Write trivia questions that include a type of cheese in the answer — but the question can't be about cheese itself" triggers a breakdown in the LLM's tokenization/semantic search process, where it starts scrambling to find similarities to the target at the level of a token, not the word or concept itself. At least that explains why it thinks "Confederate" has "feta" in it or "Stephen Colbert" includes "Colby" somewhere. Anyone have better insight?
-
-The response gets there eventually … sort of. Either way, it's fascinating to watch in real time.
-
-This isn't to hate on AI — far from it. I'm sure any of the frontier models could reverse engineer a theme like this, but they definitely seem to struggle with the "generative" part here.
-
-Good. Trivia is better for humans anyway.
-
-Speaking of… any dorks want to beta test a trivia game?
-
-#Vibecoding #AISlop #BuildInPublic #Trivia #AsiagoBagel</div>
-        <div class="li-footer">
-          <div class="li-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            Original post
-          </div>
-          <a class="li-view-link" href="https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7391600733839810560" target="_blank" rel="noopener">View on LinkedIn ↗</a>
-        </div>
-        <div class="li-actions">
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>Like</div>
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Comment</div>
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>Repost</div>
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>Send</div>
+      <div class="pullquote">
+        <p class="pq-text">My guess is that the prompt triggers a breakdown in the LLM's tokenization/semantic search process, where it starts scrambling to find similarities to the target at the level of a token, not the word or concept itself. At least that explains why it thinks "Confederate" has "feta" in it.</p>
+        <div class="pq-attr">
+          <div class="pq-av">DW</div>
+          <span class="pq-name">Devon Wells</span>
+          <span class="pq-sep"></span>
+          <span>November 4, 2025</span>
+          <span class="pq-sep"></span>
+          <a class="pq-link" href="https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7391600733839810560" target="_blank" rel="noopener">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            View post
+          </a>
         </div>
       </div>
 
       <p class="article-p">
-        Watching it reason in real time was clarifying. It was making confident, totally wrong
-        connections at the token level — deciding that "Confederate" contains "feta," that
-        "Colbert" contains "Colby." These aren't reasoning engines in the way we reason.
-        They're incredibly sophisticated pattern-matchers that operate on tokens, not on
-        semantic understanding the way we'd naively assume. That matters for how you use them.
-        They're phenomenal at synthesis, at restructuring, at finding connections across ideas
-        you've already given them. They're less reliable at novel abstraction — especially when
-        the abstraction works at a level that sits below or above their tokenization. The cheese
-        incident is a useful mental model to keep around. It stops you from expecting magic in
-        places where the underlying mechanism can't deliver it.
+        Claude Code specifically changed what I'm able to ship. I've used it to build the
+        mechanics of a side project, fix bugs same-day, prototype growth ideas I'd otherwise
+        have needed to spec out for a developer — or just not do. The skill isn't coding.
+        It's knowing what you want, and recognizing when the output's gone sideways.
+        If you've been doing knowledge work for any length of time, you already have both of those things.
       </p>
 
-      <p class="article-p">
-        Claude Code specifically changed what I'm able to ship. I use it for data analysis, for
-        building prototypes I'd have needed to spec out for a developer, for automating small
-        things that used to eat my time. I built the core of Ojipoji without knowing what I was
-        doing in the code at all. The day after launch, I discovered a UX problem that was causing
-        players to fail on correct answers. I had a fix pushed the same afternoon.
-      </p>
-
-      <!-- Real post: Feb 18, 2026 – Ojipoji / Claude Code -->
-      <div class="li-post">
-        <div class="li-post-head">
-          <div class="li-av">DW</div>
-          <div class="li-info">
-            <div class="li-name">Devon Wells</div>
-            <div class="li-role">Product Marketing Manager at Kite AI · 3rd+</div>
-            <div class="li-date">February 18, 2026 · 🌐</div>
-          </div>
-        </div>
-        <div class="li-body">Yesterday, I launched my daily trivia game, Ojipoji. Two hours later, I was pulling a Jean-Luc Picard style facepalm.
-
-On one question, people were guessing "Military Ranks" when the game required the exact phrasing "Army Ranks". The UI didn't make it clear at all.
-
-I felt like a dope.
-
-Fortunately, I had my buddy Claude Code on call to push a fix by the afternoon. Now it's got Wheel of Fortune-style tiles, so you can't screw up the letter count.
-
-That's my little side project, though. I'm not losing a payday because of a bug in Ojipoji.
-
-A business website is a different story, though. There are still bugs (there always are), but how would you even know?
-
-Maybe your contact dropdown doesn't work on mobile.
-
-Or your portfolio takes forever to load on Android.
-
-Or your SEO titles are still the placeholder text from your template.
-
-My friends called me out for my goof (thank you all). Your customers are just going to look somewhere else.
-
-AI can handle this stuff now. (This is what we're building at Kite AI, incidentally.)
-
-I think we'd all be better off if it did.</div>
-        <div class="li-footer">
-          <div class="li-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            Original post
-          </div>
-          <a class="li-view-link" href="https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7429933445293752320" target="_blank" rel="noopener">View on LinkedIn ↗</a>
-        </div>
-        <div class="li-actions">
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>Like</div>
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Comment</div>
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>Repost</div>
-          <div class="li-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>Send</div>
+      <div class="pullquote">
+        <p class="pq-text">Fortunately, I had my buddy Claude Code on call to push a fix by the afternoon. My friends called me out for my goof. Your customers are just going to look somewhere else.</p>
+        <div class="pq-attr">
+          <div class="pq-av">DW</div>
+          <span class="pq-name">Devon Wells</span>
+          <span class="pq-sep"></span>
+          <span>February 18, 2026</span>
+          <span class="pq-sep"></span>
+          <a class="pq-link" href="https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7429933445293752320" target="_blank" rel="noopener">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            View post
+          </a>
         </div>
       </div>
-
-      <p class="article-p">
-        What I've settled into is treating Claude Code like a very fast, tireless collaborator
-        who needs clear direction and occasional course-correction. "No, wrong approach,
-        try this" is a real skill — knowing when output is subtly off and being specific about why.
-        Turns out that's not a developer skill. It's a knowledge-work skill. If you've been in a
-        job that required judgment for any length of time, you already have it. You don't need to
-        understand what's happening in the code. You need to know what you want it to do, and
-        you need enough judgment to recognize when it's going sideways. Both of which, if you're
-        still reading this, you almost certainly have. (And if you don't, Claude will probably
-        figure it out anyway.)
-      </p>
 
     </div><!-- /detail-main -->
 
-
-    <!-- ── SIDEBAR ── -->
     <div class="detail-sidebar">
       <div class="sidebar-sticky">
 
@@ -822,21 +589,14 @@ I think we'd all be better off if it did.</div>
           <span class="st-arrow">→</span>
         </a>
 
-        <div class="sidebar-card" style="margin-top: 24px;">
+        <div class="sidebar-card">
           <div class="sidebar-card-label">About this page</div>
-          <p>
-            Built from <strong>23 posts & comments</strong> captured so far from Devon's LinkedIn.
-            The narrative was synthesized by an AI to surface consistent themes — original posts
-            are embedded verbatim above, with live links to LinkedIn.
-          </p>
+          <p>Built from <strong>23 posts & comments</strong> captured so far. Synthesized by an AI — original post text is quoted verbatim above, with links to LinkedIn.</p>
         </div>
 
-        <div class="sidebar-card" style="margin-top: 12px;">
-          <div class="sidebar-card-label">From Devon's profile</div>
-          <p style="font-style: italic; color: var(--text);">
-            "I've spent 12 years explaining AI products to people who don't care about technology.
-            (They care about what it does.)"
-          </p>
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">In Devon's words</div>
+          <p><em>"I've spent 12 years explaining AI products to people who don't care about technology. (They care about what it does.)"</em></p>
         </div>
 
         <button class="sidebar-back" onclick="showPage('hub')">← All topics</button>
